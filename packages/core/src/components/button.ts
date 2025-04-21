@@ -59,19 +59,19 @@ export default {
     "--btn-bg": "var(--color-red-700)",
     "--btn-content": "var(--color-primary-content)",
     "--btn-box-shadow":
-      "0 0 0 0 rgba(0,0,0,0.24), 0 0.01rem 0.05rem 0 rgba(0,0,0,0.19))"
+      "0 0 0 0 rgba(0,0,0,0.24), 0 0.01rem 0.05rem 0 rgba(0,0,0,0.19)"
   },
   ".btn-primary": {
     "--btn-bg": "var(--color-primary)",
     "--btn-content": "var(--color-primary-content)",
     "--btn-box-shadow":
-      "0 0 0 0 rgba(0,0,0,0.24), 0 0.01rem 0.05rem 0 rgba(0,0,0,0.19))"
+      "0 0 0 0 rgba(0,0,0,0.24), 0 0.01rem 0.05rem 0 rgba(0,0,0,0.19)"
   },
   ".btn-secondary": {
     "--btn-bg": "var(--color-secondary)",
     "--btn-content": "var(--color-secondary-content)",
     "--btn-box-shadow":
-      "0 0 0 0 rgba(0,0,0,0.24), 0 0.01rem 0.05rem 0 rgba(0,0,0,0.19))"
+      "0 0 0 0 rgba(0,0,0,0.24), 0 0.01rem 0.05rem 0 rgba(0,0,0,0.19)"
   },
   ".btn-outline": {
     "--btn-bg": "transparent",

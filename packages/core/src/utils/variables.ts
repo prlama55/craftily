@@ -1,7 +1,13 @@
-import defaultTheme from "tailwindcss/defaultTheme";
+import theme from "tailwindcss/defaultTheme";
+type DefaultThemeType = {
+  colors: () => Record<string, any>;
+  [key: string]: Record<string, any>;
+  spacing: Record<string, any>;
+};
+const defaultTheme: DefaultThemeType = theme;
 export default {
   colors: {
-    ...defaultTheme.colors(),
+    ...defaultTheme.colors(), // default colors
     base: "var(--color-base-300)",
     "base-content": "var(--color-base-content)",
     primary: "var(--color-primary)",

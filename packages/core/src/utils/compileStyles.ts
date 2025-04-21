@@ -14,6 +14,16 @@ export async function loadThemes() {
   return { defaultTheme, theme };
 }
 
+/**
+ * Compiles and extracts styles by merging the default theme and a custom theme.
+ *
+ * This function takes two theme strings, combines them into a single `@layer theme` block,
+ * compiles the styles, and returns the resulting CSS as a trimmed string.
+ *
+ * @param defaultTheme - The default theme styles as a string.
+ * @param theme - The custom theme styles as a string to be merged with the default theme.
+ * @returns A promise that resolves to the compiled and trimmed CSS string.
+ */
 export async function compileAndExtractStyles(
   defaultTheme: string,
   theme: string

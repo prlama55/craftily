@@ -23,6 +23,8 @@ const cleanCss = (cssContent: string): string => {
   // Remove spacing, width css variable if there's a fallback value
   cssContent = cssContent.replace(spacingWidthFallbackRegex, ((
     match,
+    variable,
+    prefix,
     fallback
   ) => {
     // If there's no actual fallback value, return the original match
@@ -78,6 +80,21 @@ const transformKeys = (obj: any): any => {
   );
 };
 
+/**
+ * Initializes the application by loading themes, processing CSS, and converting it to a JavaScript object.
+ *
+ * This function performs the following steps:
+ * 1. Loads the default and custom themes using `loadThemes`.
+ * 2. Converts Tailwind CSS to raw CSS using `compileAndExtractStyles`.
+ * 3. Cleans the raw CSS using `cleanCss`.
+ * 4. Parses the cleaned CSS into a PostCSS root object and converts it to a JavaScript object.
+ * 5. Transforms the keys of the JavaScript object to kebab-case using `transformKeys`.
+ * 6. Applies necessary transformations, such as replacing `apply: true` with an empty object.
+ * 7. Returns the final JavaScript object as a JSON string.
+ *
+ * @returns {Promise<string>} A promise that resolves to a JSON string representation of the processed CSS.
+ * @throws {Error} Throws an error if any step in the process fails, with a detailed error message.
+ */
 export const init = async () => {
   try {
     // Load themes
