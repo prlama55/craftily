@@ -1,5 +1,5 @@
 {
-  "name": "@craftily-ui/playground",
+  "name": "@craftily/playground",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -12,8 +12,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@craftily-ui/core": "*",
-    "@craftily-ui/react": "*",
+    "@craftily/ui-react": "*",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },

@@ -40,7 +40,9 @@ const createPlugin = {
 
       if (!options.name) throw new Error("Plugin name is required");
       if (!options.selector) throw new Error("Plugin selector is required");
-      init();
+      (async () => {
+        await init();
+      })();
       const plugin = pluginCreatorFunction({
         ...options,
         components: { ...components }

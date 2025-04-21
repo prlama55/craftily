@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:core": "npm run build --workspace @craftily-ui/core",
-    "build:react": "npm run build --workspace @craftily-ui/core --workspace @craftily-ui/react",
-    "build:vue": "npm run build --workspace @craftily-ui/core --workspace @craftily-ui/vue",
-    "storybook": "npm run build:react & npm run storybook --workspace @craftily-ui/playground"
+    "build:core": "npm run build --workspace @craftily/ui",
+    "build:react": "npm run build --workspace @craftily/ui --workspace @craftily/ui-react",
+    "build:vue": "npm run build --workspace @craftily/ui --workspace @craftily/ui-vue",
+    "storybook": "npm run build:react & npm run storybook --workspace @craftily/playground"
   },
   "repository": {
     "type": "git",

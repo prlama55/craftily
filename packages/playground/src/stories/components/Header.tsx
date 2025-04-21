@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "@craftily-ui/react";
+import { Button } from "@craftily/ui-react";
 
 type User = {
   name: string;
