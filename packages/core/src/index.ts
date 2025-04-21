@@ -58,7 +58,7 @@ export default createPlugin.withOptions(
           ...colors
         }
       });
-      // Add components to Tailwind. execute only if defaultTheme is true to prevent dublication
+      // Add components to Tailwind. execute only if defaultTheme is true to prevent duplication
       if (isDefault) {
         addComponents({
           ...components
