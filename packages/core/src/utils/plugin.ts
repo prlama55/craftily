@@ -35,14 +35,19 @@ const createPlugin = {
     configFunction: (variables: Record<string, any>) => Partial<Config>
   ) => {
     const optionsFunction: OptionsFunction = (options) => {
+      (async () => {
+        try {
+          await init();
+        } catch (error: any) {
+          // Handle the error and throw a new error with a custom message
+          throw new Error(`Error initializing plugin: ${error.message}`);
+        }
+      })();
       if (typeof options !== "object")
         throw new Error("Options must be an object");
 
       if (!options.name) throw new Error("Plugin name is required");
       if (!options.selector) throw new Error("Plugin selector is required");
-      (async () => {
-        await init();
-      })();
       const plugin = pluginCreatorFunction({
         ...options,
         components: { ...components }

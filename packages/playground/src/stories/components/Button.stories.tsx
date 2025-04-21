@@ -64,3 +64,10 @@ export const Outline: Story = {
     className: "btn btn-outline"
   }
 };
+
+export const Custom: Story = {
+  args: {
+    children: "Custom",
+    className: "btn bg-blue-500 text-white hover:bg-blue-600 border-none"
+  }
+};
