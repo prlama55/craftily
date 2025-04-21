@@ -1,35 +1,27 @@
 {
-  "name": "@craftily/ui",
-  "private": true,
-  "version": "0.1.0",
-  "type": "module",
-  "main": "dist/craftily.cjs.js",
-  "module": "dist/craftily.esm.js",
-  "types": "dist/craftily.d.ts",
+  "name": "craftilyui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "build:core": "npm run build --workspace @craftily-ui/core",
+    "build:react": "npm run build --workspace @craftily-ui/core --workspace @craftily-ui/react",
+    "build:vue": "npm run build --workspace @craftily-ui/core --workspace @craftily-ui/vue",
+    "storybook": "npm run build:react & npm run storybook --workspace @craftily-ui/playground"
   },
-  "dependencies": {
-    "@tailwindcss/vite": "^4.0.13",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "tailwindcss": "^4.0.13"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prlama55/craftily.git"
   },
-  "devDependencies": {
-    "@eslint/js": "^9.21.0",
-    "@types/react": "^19.0.10",
-    "@types/react-dom": "^19.0.4",
-    "@vitejs/plugin-react-swc": "^3.8.0",
-    "eslint": "^9.21.0",
-    "eslint-plugin-react-hooks": "^5.1.0",
-    "eslint-plugin-react-refresh": "^0.4.19",
-    "globals": "^15.15.0",
-    "typescript": "~5.7.2",
-    "typescript-eslint": "^8.24.1",
-    "vite": "^6.2.0"
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/prlama55/craftily/issues"
   },
-  "keywords": ["react", "components", "ui", "tailwind"]
+  "homepage": "https://github.com/prlama55/craftily#readme",
+  "workspaces": [
+    "packages/*"
+  ]
 }

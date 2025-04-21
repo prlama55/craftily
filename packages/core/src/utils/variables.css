@@ -1,0 +1,21 @@
+@theme {
+  --*: initial;
+  --color-base: ;
+  --color-base-content: ;
+  --color-primary: ;
+  --color-primary-content: ;
+  --color-secondary: ;
+  --color-secondary-content: ;
+  --color-accent: ;
+  --color-accent-content: ;
+  --color-neutral: ;
+  --color-neutral-content: ;
+  --color-info: ;
+  --color-info-content: ;
+  --color-success: ;
+  --color-success-content: ;
+  --color-warning: ;
+  --color-warning-content: ;
+  --color-error: ;
+  --color-error-content: ;
+}
