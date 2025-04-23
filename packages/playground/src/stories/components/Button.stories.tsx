@@ -16,19 +16,89 @@ const meta = {
     return (
       <div className="flex flex-row gap-4 justify-center items-center">
         <Button {...args} className={`${className} btn-xs`}>
-          {children} xs
+          {children}{" "}
+          <svg
+            className="icon"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M5 12h14M12 5l7 7-7 7"
+            />
+          </svg>
         </Button>
         <Button {...args} className={`${className} btn-sm`}>
-          {children} small
+          {children}{" "}
+          <svg
+            className="icon"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 12h14M12 5l7 7-7 7"
+            />
+          </svg>
         </Button>
         <Button {...args} className={`${className} btn-md`}>
-          {children} medium
+          {children}{" "}
+          <svg
+            className="icon"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 12h14M12 5l7 7-7 7"
+            />
+          </svg>
         </Button>
         <Button {...args} className={`${className} btn-lg`}>
-          {children} large
+          {children}{" "}
+          <svg
+            className="icon"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 12h14M12 5l7 7-7 7"
+            />
+          </svg>
         </Button>
         <Button {...args} className={`${className} btn-xl`}>
-          {children} xl
+          <svg
+            className="icon"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 12h14M12 5l7 7-7 7"
+            />
+          </svg>
+          {children}{" "}
         </Button>
       </div>
     );
@@ -41,7 +111,7 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     children: "Primary",
-    className: "btn bg-primary"
+    className: "btn btn-primary"
   }
 };
 

@@ -38,3 +38,17 @@ export const Primary: Story = {
     className: "btn btn-primary btn-lg"
   }
 };
+
+export const Secondary: Story = {
+  args: {
+    children: "Secondary",
+    className: "btn btn-secondary btn-lg"
+  }
+};
+
+export const Outline: Story = {
+  args: {
+    children: "Outline",
+    className: "btn btn-outline btn-lg"
+  }
+};

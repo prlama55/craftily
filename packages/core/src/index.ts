@@ -43,18 +43,35 @@ export default createPlugin.withOptions(
   (options: any) => {
     return ({
       addBase,
-      addComponents
+      addComponents,
+      theme
     }: {
       addBase: Function;
       addComponents: Function;
+      theme: Function;
     }) => {
-      const { name, selector, components, ...colors } = options;
+      const { name, selector, components, flattenTheme, ...colors } = options;
       if (!name) throw new Error("Name is required for the plugin");
       if (!selector) throw new Error("Selector is required for the plugin");
       const isDefault = colors["default-theme"];
       delete colors["default-theme"];
+
       addBase({
         [selector]: {
+          ...flattenTheme(theme("spacing"), "spacing"),
+          ...flattenTheme(theme("text"), "text"),
+          ...flattenTheme(theme("radius"), "radius"),
+          ...flattenTheme(theme("fontSize"), "font-size"),
+          ...flattenTheme(theme("fontFamily"), "font-family"),
+          ...flattenTheme(theme("fontWeight"), "font-weight"),
+          ...flattenTheme(theme("lineHeight"), "line-height"),
+          ...flattenTheme(theme("letterSpacing"), "letter-spacing"),
+          ...flattenTheme(theme("boxShadow"), "box-shadow"),
+          ...flattenTheme(
+            theme("transitionTimingFunction"),
+            "transition-timing-function"
+          ),
+          ...flattenTheme(theme("transitionProperty"), "transition-property"),
           ...colors
         }
       });

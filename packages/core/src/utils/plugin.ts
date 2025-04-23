@@ -11,6 +11,36 @@ export interface OptionsFunction {
   __isOptionsFunction?: boolean;
 }
 
+interface ThemeObject {
+  [key: string]: string | number | ThemeObject | Array<string | number>;
+}
+
+interface FlattenedTheme {
+  [key: string]: string | number;
+}
+
+const flattenTheme = (
+  themeObj: ThemeObject,
+  prefix: string = ""
+): FlattenedTheme => {
+  const result: FlattenedTheme = {};
+
+  for (const [key, value] of Object.entries(themeObj)) {
+    const variableName = prefix ? `${prefix}-${key}` : key;
+    if (key.includes("__CSS_VALUES__")) continue; // Skip CSS values
+
+    if (typeof value === "string" || typeof value === "number") {
+      result[`--${variableName}`] = value;
+    } else if (Array.isArray(value)) {
+      result[`--${variableName}`] = value[0]; // e.g. fontSize: [size, options]
+    } else if (typeof value === "object") {
+      Object.assign(result, flattenTheme(value as ThemeObject, variableName));
+    }
+  }
+
+  return result;
+};
+
 /**
  * Utility object for creating plugins with configurable options and associated configuration.
  */
@@ -30,19 +60,17 @@ const createPlugin = {
    * @throws {Error} If the `selector` property is missing in the options.
    * @throws {Error} If the plugin creator function does not return a function.
    */
-  withOptions: (
+  withOptions: async (
     pluginCreatorFunction: PluginCreator,
     configFunction: (variables: Record<string, any>) => Partial<Config>
   ) => {
+    try {
+      init();
+    } catch (error: any) {
+      // Handle the error and throw a new error with a custom message
+      throw new Error(`Error initializing plugin: ${error.message}`);
+    }
     const optionsFunction: OptionsFunction = (options) => {
-      (async () => {
-        try {
-          await init();
-        } catch (error: any) {
-          // Handle the error and throw a new error with a custom message
-          throw new Error(`Error initializing plugin: ${error.message}`);
-        }
-      })();
       if (typeof options !== "object")
         throw new Error("Options must be an object");
 
@@ -50,6 +78,7 @@ const createPlugin = {
       if (!options.selector) throw new Error("Plugin selector is required");
       const plugin = pluginCreatorFunction({
         ...options,
+        flattenTheme,
         components: { ...components }
       });
       if (typeof plugin !== "function") {

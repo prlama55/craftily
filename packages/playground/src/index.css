@@ -24,6 +24,11 @@
   --color-warning-content: oklch(98% 0.026 102.212);
   --color-error: oklch(59% 0.249 0.584);
   --color-error-content: oklch(97% 0.014 343.198);
+  --spacing-0: 1px;
+  --spacing-1: 1.25rem;
+  --spacing-2: 1.5rem;
+  --spacing-3: 1.75rem;
+  --spacing-4: 2rem;
 }
 
 @plugin "@craftily/ui" {

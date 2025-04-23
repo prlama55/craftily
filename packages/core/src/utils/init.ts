@@ -114,9 +114,6 @@ export const init = async () => {
 
     // Apply any necessary transformations
     replaceApplyTrueWithEmptyObject(kebabCaseContent);
-
-    // Return stringified JS object
-    return JSON.stringify(kebabCaseContent, null, undefined);
   } catch (error) {
     if (error instanceof Error) {
       console.error(error);

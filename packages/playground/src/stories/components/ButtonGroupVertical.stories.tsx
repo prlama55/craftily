@@ -14,7 +14,7 @@ const meta = {
   tags: ["autodocs"],
   render: ({ className, children, ...args }) => {
     return (
-      <div className="btn-group btn-group-direction-column bg-red-600">
+      <div className="btn-group btn-group-direction-column">
         <Button {...args} className={`${className}`}>
           One
         </Button>

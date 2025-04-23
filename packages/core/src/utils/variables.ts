@@ -5,10 +5,15 @@ type DefaultThemeType = {
   spacing: Record<string, any>;
 };
 const defaultTheme: DefaultThemeType = theme;
+console.log(typeof defaultTheme.colors);
+const colors =
+  typeof defaultTheme.colors === "function"
+    ? defaultTheme.colors()
+    : defaultTheme.colors;
 export default {
   colors: {
-    ...defaultTheme.colors(), // default colors
-    base: "var(--color-base-300)",
+    ...colors, // default colors
+    base: "var(--color-base)",
     "base-content": "var(--color-base-content)",
     primary: "var(--color-primary)",
     "primary-content": "var(--color-primary-content)",

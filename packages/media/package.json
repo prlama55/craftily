@@ -1,0 +1,38 @@
+{
+  "name": "@craftily/image",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "author": "Craftily UI",
+  "description": "A lightweight image filter utility for canvas using TypeScript.",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "clean": "rm -rf dist",
+    "publish:prepare": "npm run clean && npm run build",
+    "stable:publish": "npm run publish:prepare && npm publish --access public",
+    "beta:publish": "npm run publish:prepare && npm publish --tag beta --access public"
+  },
+  "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.1.2",
+    "rollup": "^4.39.0"
+  },
+  "keywords": [
+    "canvas",
+    "image-filters",
+    "typescript",
+    "image-processing",
+    "web"
+  ]
+}
