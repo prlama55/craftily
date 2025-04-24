@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Craftily Button</title>
+  </head>
+  <body>
+    <craftily-button class="btn-primary">Click Me!</craftily-button>
+    <script src="index.umd.js"></script>
+    <script>
+      document.querySelector('craftily-button').addEventListener('click', (e) => {
+        alert(e.detail.message);
+      });
+    </script>
+  </body>
+</html>

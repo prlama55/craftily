@@ -23,11 +23,6 @@
     "stable:publish": "npm run publish:prepare && npm publish --access public",
     "beta:publish": "npm run publish:prepare && npm publish --tag beta --access public"
   },
-  "devDependencies": {
-    "@rollup/plugin-terser": "^0.4.4",
-    "@rollup/plugin-typescript": "^12.1.2",
-    "rollup": "^4.39.0"
-  },
   "keywords": [
     "canvas",
     "image-filters",

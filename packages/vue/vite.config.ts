@@ -1,9 +1,22 @@
 /** @type {import('vite').UserConfig} */
 import vue from "@vitejs/plugin-vue";
 import path from "path";
+import ViteDts from "vite-plugin-dts"; // Import the ViteDts plugin
 
 export default {
-  plugins: [vue()],
+  plugins: [
+    vue({
+      template: {
+        compilerOptions: {
+          isCustomElement: (tag) => tag.startsWith("craftily-")
+        }
+      }
+    }),
+    ViteDts({
+      // Plugin options (optional)
+      insertTypesEntry: true // Automatically adds the `types` entry to package.json
+    })
+  ],
   build: {
     lib: {
       entry: path.resolve(__dirname, "src/index.ts"), // Entry for Vue components

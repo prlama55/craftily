@@ -7,7 +7,7 @@
       <div v-if="image">
         <label v-for="(value, key) in filters" :key="key" class="block mb-2">
           {{ key }}: {{ value }}
-          <input type="range" :min="rangeMap[key].min" :max="rangeMap[key].max" :step="0.01" v-model.number="filters[key]" @input="applyFilters" />
+          <input type="range" :min="rangeMap[key]!.min" :max="rangeMap[key]!.max" :step="0.01" v-model.number="filters[key]" @input="applyFilters" />
         </label>
       </div>
     </div>
@@ -30,7 +30,7 @@
     blur: 0,
   })
   
-  const rangeMap: Record<keyof FilterOptions, { min: number; max: number }> = {
+  const rangeMap: Partial<Record<keyof FilterOptions, { min: number; max: number }>> = {
     brightness: { min: 0, max: 2 },
     contrast: { min: 0, max: 2 },
     grayscale: { min: 0, max: 1 },
@@ -61,4 +61,3 @@
     width: 100%;
   }
   </style>
-  

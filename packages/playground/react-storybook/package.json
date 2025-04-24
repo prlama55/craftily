@@ -1,0 +1,24 @@
+{
+  "name": "@craftily/react-storybook",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 3005",
+    "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "@craftily/ui-react": "*",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended"
+    ]
+  }
+}

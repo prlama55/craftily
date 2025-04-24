@@ -1,6 +1,6 @@
 import type { Config, PluginCreator } from "tailwindcss/plugin";
 import { init } from "./init";
-import components from "../components";
+import components from "../styles";
 import variables from "./variables";
 
 export interface OptionsFunction {

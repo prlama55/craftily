@@ -1,8 +1,20 @@
 {
   "name": "@craftily/ui-vue",
   "version": "1.0.0",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "type": "module",
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.es.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "vite build"
   },
@@ -11,9 +23,6 @@
     "@craftily/image": "*"
   },
   "peerDependencies": {
-    "vue": "^3.5.13"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-vue": "^5.2.3"
+    "vue": ">=3.5.13"
   }
 }
