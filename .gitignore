@@ -21,3 +21,5 @@ coverage
 *.swo
 *.swm
 *.swp
+
+*storybook.log

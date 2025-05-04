@@ -1,39 +1,37 @@
-import type { Meta, StoryFn } from "@storybook/vue3";
+import type { Meta, StoryFn } from '@storybook/vue3';
 
-import { Button } from "@craftily/ui-vue";
-
+import { Button } from '@craftily/ui-vue';
+import type { ButtonProps } from '@craftily/ui-vue';
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta = {
-  title: "CraftilyUI/Vue/Button",
+  title: 'CraftilyUI/Vue/Button',
   component: Button,
   // This component will have an automatically generated docsPage entry: https://storybook.js.org/docs/writing-docs/autodocs
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   parameters: {
     docs: {
       description: {
-        story: "A button component"
-      }
+        story: 'A button component',
+      },
     },
-    actions: { handles: ["click"] }
-  }
+    actions: { handles: ['click'] },
+  },
 } satisfies Meta<typeof Button>;
 
 export default meta;
 
-const Template: StoryFn<typeof Button> = (args) => ({
+const Template: StoryFn<typeof Button> = (args: ButtonProps) => ({
   components: { Button },
   setup() {
     return { args };
   },
-  methods: {
-    onClick() {
-      console.log("Button clicked");
-    }
-  },
-  template: `<Button v-bind="args" @onClick="onClick">Click Me!</Button>`
+  template: `<Button v-bind="args">Click Me!</Button>`,
 });
 
 export const Primary = Template.bind({});
 Primary.args = {
-  class: "btn btn-primary"
+  variant: 'primary',
+  size: 'md',
+  isLoading: false,
+  children: 'Click Me!',
 };

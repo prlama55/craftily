@@ -1,0 +1,14 @@
+# Ignore artifacts:
+build
+coverage
+dist
+node_modules
+
+# Ignore all HTML and MD files:
+*.html
+*.md
+
+# Specific files to ignore
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
