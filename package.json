@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "build:core": "npm run build --workspace @craftily/ui",
-    "build:imageUtils": "npm run build --workspace @craftily/image",
+    "build:image": "npm run build --workspace @craftily/image",
     "build:react": "npm run build --workspace @craftily/ui --workspace @craftily/image --workspace @craftily/ui-react",
     "build:vue": "npm run build --workspace @craftily/ui --workspace @craftily/image --workspace @craftily/ui-vue",
-    "build:all": "npm run build:core & npm run build:imageUtils & npm run build:react & npm run build:vue",
+    "build:all": "npm run build:core & npm run build:image & npm run build:react & npm run build:vue",
     "react:storybook": "npm run build:react & npm run storybook --workspace @craftily/react-storybook",
     "vue:storybook": "npm run build:vue & npm run storybook --workspace @craftily/vue-storybook",
     "storybook": "npm run build:all & npm run storybook --workspace @craftily/react-storybook & npm run storybook --workspace @craftily/vue-storybook",
