@@ -1,0 +1,46 @@
+{
+  "name": "@craftily/ui",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/types/index.d.ts",
+  "global": "global.d.ts",
+  "type": "module",
+  "license": "MIT",
+  "author": "Craftily UI",
+  "description": "The core package for Craftily UI, a Tailwind CSS component library.",
+  "files": [
+    "dist",
+    "dist/types",
+    "global.d.ts"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/types/index.d.ts"
+    },
+    "./theme": {
+      "import": "./dist/theme.js",
+      "require": "./dist/theme.cjs",
+      "types": "./dist/types/theme.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "rollup -c rollup.config.mjs",
+    "clean": "rm -rf dist",
+    "publish:prepare": "npm run clean && npm run build",
+    "stable:publish": "npm run publish:prepare && npm publish --access public",
+    "beta:publish": "npm run publish:prepare && npm publish --tag beta --access public"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1"
+  },
+  "peerDependencies": {
+    "postcss": ">=8.0.0",
+    "tailwindcss": ">=4.0.0"
+  },
+  "devDependencies": {
+    "tailwind-merge": "^3.2.0"
+  }
+}

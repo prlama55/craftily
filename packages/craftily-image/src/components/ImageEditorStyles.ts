@@ -1,0 +1,72 @@
+import { css } from 'lit';
+
+export default css`
+  :host {
+    display: block;
+    font-family: sans-serif;
+    max-width: 100%;
+    justify-self: center;
+  }
+  canvas {
+    max-width: 100%;
+    display: block;
+    margin-bottom: 1rem;
+    outline: 1px solid;
+    justify-self: center;
+  }
+  .toolbar {
+    display: inline-flex;
+    gap: 1rem;
+    padding: 1rem;
+    flex-direction: column;
+    width: 100%;
+  }
+  .control {
+    display: grid;
+    grid-template-columns: 110px 1fr 50px;
+  }
+  input[type='color'] {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+  .preview {
+    margin-top: 1rem;
+  }
+  .preview img {
+    max-width: 100%;
+    display: block;
+  }
+  .upload {
+    margin-bottom: 1rem;
+  }
+  .actions {
+    display: grid;
+    grid-template-columns: 1fr 20px 50px;
+    gap: 1rem;
+    justify-content: end;
+    justify-items: start;
+  }
+  .actions.hide-download {
+    grid-template-columns: 1fr 50px;
+  }
+  .actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: inline-block;
+    line-height: 1;
+  }
+  .actions button:hover {
+    opacity: 0.8;
+  }
+  .actions .icon {
+    display: inline-block;
+    line-height: 1;
+  }
+  .actions .divider {
+    background: #dddddd;
+    width: 100%;
+  }
+`;
