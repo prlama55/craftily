@@ -7,11 +7,11 @@ import {
   MimeTypes,
   InputControlProps,
   DefaultControlProps,
-  ImageEditedEventDetail,
+  ImageEditorEventDetail,
 } from '../types';
 import {
   DEFAULT_CONTROL_OPTIONS,
-  EVENT_TYPE_EDITED,
+  EVENT_TYPE_CONTROL_CHANGE,
   EVENT_TYPE_RESET,
   MIME_TYPES,
 } from '../constants';
@@ -76,7 +76,7 @@ class ImageEditor extends LitElement {
           </div>`
         : ''}
       <canvas></canvas>
-      <img src=${this.src} @load=${this.draw} style="display:none;" />
+      <img src=${this.src} crossorigin="anonymous" @load=${this.draw} style="display:none;" />
 
       <div class="toolbar">
         ${this.showActions()}
@@ -118,7 +118,7 @@ class ImageEditor extends LitElement {
   private updateValue(key: string, value: number | string) {
     this.controls[key].value = value;
     this.draw();
-    this.dispatchImageEditedEvent(EVENT_TYPE_EDITED);
+    this.onControlChange(`${key}Changed`);
   }
 
   private draw() {
@@ -175,18 +175,23 @@ class ImageEditor extends LitElement {
       {} as Record<Property, InputControlProps>
     );
     this.draw();
-    this.dispatchImageEditedEvent(EVENT_TYPE_RESET);
+    this.onControlChange(EVENT_TYPE_RESET);
   }
 
-  private dispatchImageEditedEvent(type: string) {
-    const event = new CustomEvent<ImageEditedEventDetail>(type, {
+  private onControlChange(type: string) {
+    const event = new CustomEvent<ImageEditorEventDetail>(EVENT_TYPE_CONTROL_CHANGE, {
       detail: {
-        toDataURL: imageUtils.toDataURL,
-        toBlob: imageUtils.toBlob,
-        download: imageUtils.download,
-        canvas: this.canvas,
-        controls: this.controls,
-        eventType: type,
+        toDataURL: (type: SupportedFileFormat = 'png', quality = 1.0) =>
+          imageUtils.toDataURL(type, quality),
+        toBlob: (type: SupportedFileFormat = 'png', quality = 1.0) =>
+          imageUtils.toBlob(type, quality),
+        download: (type: SupportedFileFormat = 'png', quality = 1.0) =>
+          imageUtils.download(type, quality),
+        metadata: {
+          canvas: this.canvas,
+          controls: this.controls,
+          eventType: type,
+        },
       },
       bubbles: true,
       composed: true,

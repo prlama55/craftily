@@ -27,11 +27,15 @@ export type MimeTypes = Record<SupportedFileFormat, string>;
 export type FilterOptions = Record<Property, number | string | undefined>;
 
 // Define an interface for the event detail
-export interface ImageEditedEventDetail {
+export interface ImageEditorEventDetail {
   toDataURL: (type?: SupportedFileFormat, quality?: number) => string;
   toBlob: (type?: SupportedFileFormat, quality?: number) => Promise<Blob>;
   download: (type?: SupportedFileFormat, quality?: number) => void;
-  canvas: HTMLCanvasElement;
-  controls: Record<Property, InputControlProps>;
-  eventType: string;
+  metadata: {
+    canvas: HTMLCanvasElement;
+    controls: Record<Property, InputControlProps>;
+    eventType: string;
+  };
+  bubbles?: boolean;
+  composed?: boolean;
 }

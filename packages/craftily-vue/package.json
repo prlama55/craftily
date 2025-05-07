@@ -1,6 +1,6 @@
 {
   "name": "@craftily/ui-vue",
-  "version": "1.0.0",
+  "version": "0.1.4",
   "type": "module",
   "main": "./dist/index.umd.js",
   "module": "./dist/index.es.js",
@@ -16,7 +16,11 @@
     "dist"
   ],
   "scripts": {
-    "build": "vite build"
+    "build": "vite build",
+    "stable:publish": "npm run publish:prepare && npm publish --access public",
+    "beta:publish": "npm run publish:prepare && npm publish --tag beta --access public",
+    "clean": "rm -rf dist",
+    "publish:prepare": "npm run clean && npm run build"
   },
   "dependencies": {
     "@craftily/ui": "*",

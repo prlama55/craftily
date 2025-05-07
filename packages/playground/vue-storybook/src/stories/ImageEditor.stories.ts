@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 
 import { ImageEditor } from '@craftily/ui-vue';
-import type { ImageEditedEventDetail } from '@craftily/image';
+import type { ImageEditorEventDetail } from '@craftily/image';
 
 const meta = {
   /* 👇 The title prop is optional.
@@ -16,11 +16,11 @@ const meta = {
       return { args };
     },
     methods: {
-      handleImageEdited(value: string) {
-        console.log('Image edited======>>>', value);
+      handleControlChange(value: ImageEditorEventDetail) {
+        console.log('Control change======>>>', value.toDataURL());
       },
     },
-    template: '<ImageEditor @imageEdited="handleImageEdited" v-bind="args" />',
+    template: `<ImageEditor @onControlChange="handleControlChange" v-bind="args" />`,
   }),
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout
@@ -56,5 +56,7 @@ export const LoggedIn: Story = {
         label: 'Color',
       },
     },
+    showUpload: true,
+    showDownload: true,
   },
 };

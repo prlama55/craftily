@@ -30,5 +30,5 @@ export const MIME_TYPES: MimeTypes = {
   webp: 'image/webp',
 };
 
-export const EVENT_TYPE_EDITED = 'image-edited';
+export const EVENT_TYPE_CONTROL_CHANGE = 'onControlChange';
 export const EVENT_TYPE_RESET = 'image-reset';

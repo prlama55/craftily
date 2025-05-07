@@ -3,31 +3,30 @@
   <div>
     <craftily-image-editor
       :controls="controls"
-      :showDownload="false"
-      showUpload="true"
-      @image-edited="handleImageEdited"
-      ref="editorRef"
+      :showDownload="showDownload"
+      :showUpload="showUpload"
+      :src="src"
+      @onControlChange="handleControlChange"
     ></craftily-image-editor>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ControlProps, ImageEditedEventDetail } from '@craftily/image';
+import { ControlProps, ImageEditorEventDetail } from '@craftily/image';
 import '@craftily/image/editor';
-import { ref } from 'vue';
 
 const emit = defineEmits<{
-  (e: 'imageEdited', details: string): void;
+  (e: 'onControlChange', details: ImageEditorEventDetail): void;
 }>();
 
 defineProps<{
   controls?: ControlProps;
+  showUpload?: boolean;
+  showDownload?: boolean;
+  src?: string;
 }>();
 
-const editorRef = ref<HTMLElement>();
-
-const handleImageEdited = (event: CustomEvent<ImageEditedEventDetail>) => {
-  // Emit the edited image
-  emit('imageEdited', event.detail.toDataURL());
+const handleControlChange = (event: CustomEvent<ImageEditorEventDetail>) => {
+  emit('onControlChange', event.detail);
 };
 </script>
