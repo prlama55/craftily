@@ -1,0 +1,22 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import * as ModalStories from './Modal.stories';
+
+<Meta of={ModalStories} />
+
+# Modal
+
+The Modal component is a dialog overlay that appears on top of the main content and can be used to display important information or gather user input.
+
+## Basic Usage
+
+A simple modal with a title and content:
+
+<Canvas>
+  <Story of={ModalStories.Basic} />
+</Canvas>
+
+## Interactive Controls
+
+Use the controls below to experiment with the modal's properties:
+
+<Controls />

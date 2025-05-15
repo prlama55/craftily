@@ -12,7 +12,7 @@
     "react:storybook": "npm run build:react & npm run storybook --workspace @craftily/react-storybook",
     "vue:storybook": "npm run build:vue & npm run storybook --workspace @craftily/vue-storybook",
     "storybook": "npm run build:all & npm run storybook --workspace @craftily/react-storybook & npm run storybook --workspace @craftily/vue-storybook",
-    "build-storybook": "npm run build:all & npm run build-storybook --workspace @craftily/react-storybook --workspace @craftily/vue-storybook",
+    "build:storybook": "npm run build --workspace @craftily/react-storybook --workspace @craftily/vue-storybook",
     "lint": "eslint . --config eslint.config.mjs",
     "lint:fix": "eslint . --config eslint.config.mjs --fix",
     "format": "prettier --write .",

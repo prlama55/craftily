@@ -1,0 +1,46 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import * as InputStories from './Input.stories';
+
+<Meta of={InputStories} />
+
+# Input
+
+The Input component is a flexible text input field that supports various states and sizes.
+
+## Basic Usage
+
+Basic text input with placeholder:
+
+<Canvas>
+  <Story of={InputStories.Basic} />
+</Canvas>
+
+## Variants
+
+Different input styles:
+
+<Canvas>
+  <Story of={InputStories.Variants} />
+</Canvas>
+
+## With Icon
+
+Input fields with icons:
+
+<Canvas>
+  <Story of={InputStories.WithIcon} />
+</Canvas>
+
+## States
+
+Different states of input fields:
+
+<Canvas>
+  <Story of={InputStories.States} />
+</Canvas>
+
+## Interactive Controls
+
+Use the controls below to experiment with the input's properties:
+
+<Controls />

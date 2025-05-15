@@ -4,12 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview",
     "storybook": "storybook dev -p 3005",
-    "build-storybook": "storybook build"
+    "build": "storybook build -o ../../../docs/react-storybook"
   },
   "dependencies": {
     "@craftily/ui-react": "*",
@@ -20,5 +16,10 @@
     "extends": [
       "plugin:storybook/recommended"
     ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.1.6"
   }
 }

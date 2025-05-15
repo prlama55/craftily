@@ -8,7 +8,7 @@ const meta = {
    * See https://storybook.js.org/docs/configure/#configure-story-loading
    * to learn how to generate automatic titles
    */
-  title: 'CraftilyUI/Vue/ImageEditor',
+  title: 'Components/ImageEditor',
   component: ImageEditor,
   render: (args: any) => ({
     components: { ImageEditor },
@@ -16,9 +16,7 @@ const meta = {
       return { args };
     },
     methods: {
-      handleControlChange(value: ImageEditorEventDetail) {
-        console.log('Control change======>>>', value.toDataURL());
-      },
+      handleControlChange(value: ImageEditorEventDetail) {},
     },
     template: `<ImageEditor @onControlChange="handleControlChange" v-bind="args" />`,
   }),

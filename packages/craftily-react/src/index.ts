@@ -1,2 +1,2 @@
-import '@craftily/image/editor';
 export * from './components';
+export * from './types/common';

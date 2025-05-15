@@ -55,6 +55,24 @@ export default defineConfig([
     plugins: plugins,
   },
   {
+    input: 'src/utils/plugin.ts', // Entry point for the core package
+    output: [
+      {
+        file: 'dist/plugin.js', // Output file for ES module
+        format: 'esm',
+        sourcemap: true,
+      },
+      {
+        file: 'dist/plugin.cjs', // Output file for cjs
+        format: 'commonjs',
+        sourcemap: true,
+        exports: 'auto',
+      },
+    ],
+    external: [],
+    plugins: plugins,
+  },
+  {
     input: 'src/index.ts', // Entry point for the core package
     output: [
       {
@@ -87,5 +105,46 @@ export default defineConfig([
         ],
       }),
     ],
+  },
+  {
+    input: {
+      alert: 'src/components/craftily-alert.ts',
+      avatar: 'src/components/craftily-avatar.ts',
+      badge: 'src/components/craftily-badge.ts',
+      button: 'src/components/craftily-button.ts',
+      card: 'src/components/craftily-card.ts',
+      checkbox: 'src/components/craftily-checkbox.ts',
+      footer: 'src/components/craftily-footer.ts',
+      header: 'src/components/craftily-header.ts',
+      input: 'src/components/craftily-input.ts',
+      modal: 'src/components/craftily-modal.ts',
+      radio: 'src/components/craftily-radio.ts',
+      select: 'src/components/craftily-select.ts',
+      spinner: 'src/components/craftily-spinner.ts',
+      textfield: 'src/components/craftily-textfield.ts',
+      tooltip: 'src/components/craftily-tooltip.ts',
+      switch: 'src/components/craftily-switch.ts',
+      tabs: 'src/components/craftily-tabs.ts',
+    },
+    output: [
+      {
+        dir: 'dist',
+        format: 'esm',
+        preserveModules: true,
+        preserveModulesRoot: 'src/components',
+        entryFileNames: '[name].js',
+        sourcemap: true,
+      },
+      {
+        dir: 'dist',
+        format: 'commonjs',
+        preserveModules: true,
+        preserveModulesRoot: 'src/components',
+        entryFileNames: '[name].cjs',
+        sourcemap: true,
+      },
+    ],
+    external: [],
+    plugins: [...plugins],
   },
 ]);

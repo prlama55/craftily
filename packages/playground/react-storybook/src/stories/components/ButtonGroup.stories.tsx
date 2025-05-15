@@ -4,7 +4,7 @@ import { Button } from '@craftily/ui-react';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'CraftilyUI/React/ButtonGroup/Horizontal',
+  title: 'Components/ButtonGroup/Horizontal',
   component: Button,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
@@ -15,15 +15,9 @@ const meta = {
   render: ({ className, children, ...args }) => {
     return (
       <div className="btn-group">
-        <Button {...args} className={`${className}`}>
-          One
-        </Button>
-        <Button {...args} className={`${className}`}>
-          Two
-        </Button>
-        <Button {...args} className={`${className}`}>
-          Three
-        </Button>
+        <Button {...args} className={`${className}`} label="One" />
+        <Button {...args} className={`${className}`} label="Two" />
+        <Button {...args} className={`${className}`} label="Three" />
       </div>
     );
   },
@@ -34,21 +28,18 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    children: 'Primary',
-    className: 'btn btn-primary btn-lg',
+    variant: 'primary',
   },
 };
 
 export const Secondary: Story = {
   args: {
-    children: 'Secondary',
-    className: 'btn btn-secondary btn-lg',
+    variant: 'secondary',
   },
 };
 
 export const Outline: Story = {
   args: {
-    children: 'Outline',
-    className: 'btn btn-outline btn-lg',
+    variant: 'outline',
   },
 };

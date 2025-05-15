@@ -1,7 +1,6 @@
 import typescript from '@rollup/plugin-typescript';
 import { defineConfig } from 'rollup';
 import terser from '@rollup/plugin-terser';
-import copy from 'rollup-plugin-copy';
 import litcss from 'rollup-plugin-lit-css';
 const plugins = [
   litcss({ include: '**/*.css' }),
@@ -12,9 +11,6 @@ const plugins = [
     rootDir: 'src',
   }),
   terser(),
-  copy({
-    targets: [{ src: 'src/global.d.ts', dest: 'dist' }],
-  }),
 ];
 export default defineConfig([
   {

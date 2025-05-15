@@ -18,7 +18,7 @@ import createPlugin from './utils/plugin';
  * ```typescript
  * export default createPlugin.withOptions(
  *   (options) => {
- *     return ({ addBase, addComponents }) => {
+ *     return ({ addBase }) => {
  *       // Plugin logic here
  *     };
  *   },
@@ -41,25 +41,11 @@ import createPlugin from './utils/plugin';
  */
 export default createPlugin.withOptions(
   (options: any) => {
-    return ({
-      addBase,
-      addComponents,
-      theme,
-    }: {
-      addBase: Function;
-      addComponents: Function;
-      theme: Function;
-    }) => {
-      const { name, selector, components, flattenTheme, ...colors } = options;
+    return ({ addBase, theme }: { addBase: Function; theme: Function }) => {
+      const { name, selector, flattenTheme, ...colors } = options;
       if (!name) throw new Error('Name is required for the plugin');
       if (!selector) throw new Error('Selector is required for the plugin');
       delete colors['default-theme'];
-      // Add components to Tailwind. execute only if defaultTheme is true to prevent duplication
-      addComponents({
-        [selector]: {
-          ...components,
-        },
-      });
       addBase({
         [selector]: {
           ...flattenTheme(theme('spacing'), 'spacing'),

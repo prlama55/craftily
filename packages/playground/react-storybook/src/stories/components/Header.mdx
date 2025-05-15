@@ -1,0 +1,46 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import * as HeaderStories from './Header.stories';
+
+<Meta of={HeaderStories} />
+
+# Header
+
+The Header component provides a consistent layout for website headers with navigation, branding, and action items.
+
+## Basic Header
+
+Simple header with logo and navigation:
+
+<Canvas>
+  <Story of={HeaderStories.Basic} />
+</Canvas>
+
+## With Actions
+
+Header with navigation and action buttons:
+
+<Canvas>
+  <Story of={HeaderStories.WithActions} />
+</Canvas>
+
+## With Search
+
+Header including a search bar:
+
+<Canvas>
+  <Story of={HeaderStories.WithSearch} />
+</Canvas>
+
+## Responsive
+
+Responsive header with mobile menu:
+
+<Canvas>
+  <Story of={HeaderStories.Responsive} />
+</Canvas>
+
+## Interactive Controls
+
+Use the controls below to experiment with the header's properties:
+
+<Controls />

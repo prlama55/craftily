@@ -1,0 +1,46 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import * as SwitchStories from './Switch.stories';
+
+<Meta of={SwitchStories} />
+
+# Switch
+
+The Switch component is a toggle switch that allows users to turn options on or off.
+
+## Basic Usage
+
+Basic switch with label:
+
+<Canvas>
+  <Story of={SwitchStories.Basic} />
+</Canvas>
+
+## Sizes
+
+Switches are available in different sizes:
+
+<Canvas>
+  <Story of={SwitchStories.Sizes} />
+</Canvas>
+
+## States
+
+Different states of switches:
+
+<Canvas>
+  <Story of={SwitchStories.States} />
+</Canvas>
+
+## With Description
+
+Switch with additional description text:
+
+<Canvas>
+  <Story of={SwitchStories.WithDescription} />
+</Canvas>
+
+## Interactive Controls
+
+Use the controls below to experiment with the switch's properties:
+
+<Controls />

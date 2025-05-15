@@ -20,10 +20,100 @@
       "require": "./dist/index.cjs",
       "types": "./dist/types/index.d.ts"
     },
+    "./alert": {
+      "import": "./dist/alert.js",
+      "require": "./dist/alert.cjs",
+      "types": "./dist/types/components/craftily-alert.d.ts"
+    },
+    "./avatar": {
+      "import": "./dist/avatar.js",
+      "require": "./dist/avatar.cjs",
+      "types": "./dist/types/components/craftily-avatar.d.ts"
+    },
+    "./badge": {
+      "import": "./dist/badge.js",
+      "require": "./dist/badge.cjs",
+      "types": "./dist/types/components/craftily-badge.d.ts"
+    },
+    "./button": {
+      "import": "./dist/button.js",
+      "require": "./dist/button.cjs",
+      "types": "./dist/types/components/craftily-button.d.ts"
+    },
+    "./card": {
+      "import": "./dist/card.js",
+      "require": "./dist/card.cjs",
+      "types": "./dist/types/components/craftily-card.d.ts"
+    },
+    "./checkbox": {
+      "import": "./dist/checkbox.js",
+      "require": "./dist/checkbox.cjs",
+      "types": "./dist/types/components/craftily-checkbox.d.ts"
+    },
+    "./footer": {
+      "import": "./dist/footer.js",
+      "require": "./dist/footer.cjs",
+      "types": "./dist/types/components/craftily-footer.d.ts"
+    },
+    "./header": {
+      "import": "./dist/header.js",
+      "require": "./dist/header.cjs",
+      "types": "./dist/types/components/craftily-header.d.ts"
+    },
+    "./input": {
+      "import": "./dist/input.js",
+      "require": "./dist/input.cjs",
+      "types": "./dist/types/components/craftily-input.d.ts"
+    },
+    "./modal": {
+      "import": "./dist/modal.js",
+      "require": "./dist/modal.cjs",
+      "types": "./dist/types/components/craftily-modal.d.ts"
+    },
+    "./radio": {
+      "import": "./dist/radio.js",
+      "require": "./dist/radio.cjs",
+      "types": "./dist/types/components/craftily-radio.d.ts"
+    },
+    "./select": {
+      "import": "./dist/select.js",
+      "require": "./dist/select.cjs",
+      "types": "./dist/types/components/craftily-select.d.ts"
+    },
+    "./spinner": {
+      "import": "./dist/spinner.js",
+      "require": "./dist/spinner.cjs",
+      "types": "./dist/types/components/craftily-spinner.d.ts"
+    },
+    "./textfield": {
+      "import": "./dist/textfield.js",
+      "require": "./dist/textfield.cjs",
+      "types": "./dist/types/components/craftily-textfield.d.ts"
+    },
+    "./tooltip": {
+      "import": "./dist/tooltip.js",
+      "require": "./dist/tooltip.cjs",
+      "types": "./dist/types/components/craftily-tooltip.d.ts"
+    },
+    "./switch": {
+      "import": "./dist/switch.js",
+      "require": "./dist/switch.cjs",
+      "types": "./dist/types/components/craftily-switch.d.ts"
+    },
+    "./tabs": {
+      "import": "./dist/tabs.js",
+      "require": "./dist/tabs.cjs",
+      "types": "./dist/types/components/craftily-tabs.d.ts"
+    },
     "./theme": {
       "import": "./dist/theme.js",
       "require": "./dist/theme.cjs",
       "types": "./dist/types/theme.d.ts"
+    },
+    "./plugin": {
+      "import": "./dist/plugin.js",
+      "require": "./dist/plugin.cjs",
+      "types": "./dist/types/utils/plugin.d.ts"
     }
   },
   "scripts": {
@@ -34,7 +124,8 @@
     "beta:publish": "npm run publish:prepare && npm publish --tag beta --access public"
   },
   "dependencies": {
-    "clsx": "^2.1.1"
+    "clsx": "^2.1.1",
+    "lit": "^3.3.0"
   },
   "peerDependencies": {
     "postcss": ">=8.0.0",

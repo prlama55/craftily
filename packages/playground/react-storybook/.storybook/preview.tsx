@@ -36,42 +36,6 @@ export const parameters = {
       { name: 'dark', value: '#000000' },
     ],
   },
-  viewport: {
-    viewports: {
-      mobile: {
-        name: 'Mobile',
-        styles: {
-          width: '375px',
-          height: '667px',
-        },
-        type: 'mobile',
-      },
-      tablet: {
-        name: 'Tablet',
-        styles: {
-          width: '768px',
-          height: '1024px',
-        },
-        type: 'tablet',
-      },
-      laptop: {
-        name: 'Laptop',
-        styles: {
-          width: '1440px',
-          height: '900px',
-        },
-        type: 'desktop',
-      },
-      desktop: {
-        name: 'Desktop',
-        styles: {
-          width: '2560px',
-          height: '1440px',
-        },
-        type: 'desktop',
-      },
-    },
-  },
 };
 
 export const globalTypes = {
@@ -99,7 +63,7 @@ const preview: Preview = {
       body.classList.remove('light', 'dark');
       body.classList.add(theme);
 
-      return <Story />;
+      return <div className="min-w-[60vw] ml-2 mr-2 p-2 bg-white dark:bg-gray-900">{Story()}</div>;
     },
   ],
 };

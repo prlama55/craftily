@@ -1,0 +1,38 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import * as TooltipStories from './Tooltip.stories';
+
+<Meta of={TooltipStories} />
+
+# Tooltip
+
+The Tooltip component displays informative text when users hover over or focus on an element.
+
+## Basic Usage
+
+Basic tooltip with text:
+
+<Canvas>
+  <Story of={TooltipStories.Basic} />
+</Canvas>
+
+## Positions
+
+Tooltips can be positioned in different directions:
+
+<Canvas>
+  <Story of={TooltipStories.Positions} />
+</Canvas>
+
+## With Different Triggers
+
+Different ways to trigger the tooltip:
+
+<Canvas>
+  <Story of={TooltipStories.Triggers} />
+</Canvas>
+
+## Interactive Controls
+
+Use the controls below to experiment with the tooltip's properties:
+
+<Controls />
