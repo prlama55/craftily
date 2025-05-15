@@ -1,0 +1,30 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import * as AlertStories from './Alert.stories';
+
+<Meta of={AlertStories} />
+
+# Alert
+
+The Alert component is used to display important messages or notifications to users. It supports different variants for different types of messages.
+
+## Variants
+
+Different alert styles for different types of messages:
+
+<Canvas>
+  <Story of={AlertStories.Variants} />
+</Canvas>
+
+## With Close Button
+
+Alerts can include a close button:
+
+<Canvas>
+  <Story of={AlertStories.WithCloseButton} />
+</Canvas>
+
+## Interactive Controls
+
+Use the controls below to experiment with the alert's properties:
+
+<Controls />

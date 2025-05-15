@@ -15,7 +15,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "types": ["node", "react", "@types/react", "./src/types/custom-elements"],
+    "types": ["node", "react", "@types/react", "./src/types/custom-elements.d.ts"],
     "useDefineForClassFields": false
   },
   "include": ["src", "src/types/**/*.d.ts"]

@@ -1,6 +1,5 @@
 import type { Config, PluginCreator } from 'tailwindcss/plugin';
 import { init } from './init';
-import components from '../styles';
 import variables from './variables';
 
 export interface OptionsFunction {
@@ -75,7 +74,6 @@ const createPlugin = {
       const plugin = pluginCreatorFunction({
         ...options,
         flattenTheme,
-        components: { ...components },
       });
       if (typeof plugin !== 'function') {
         throw new Error('Plugin must be a function');

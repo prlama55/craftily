@@ -3,13 +3,7 @@ import react from '@vitejs/plugin-react';
 import ViteDts from 'vite-plugin-dts'; // Import the ViteDts plugin
 
 export default defineConfig({
-  plugins: [
-    react(),
-    ViteDts({
-      // Plugin options (optional)
-      insertTypesEntry: true, // Automatically adds the `types` entry to package.json
-    }),
-  ],
+  plugins: [react(), ViteDts()],
   build: {
     lib: {
       entry: 'src/index.ts', // Use the TypeScript entry file

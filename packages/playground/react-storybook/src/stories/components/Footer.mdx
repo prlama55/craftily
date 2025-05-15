@@ -1,0 +1,46 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import * as FooterStories from './Footer.stories';
+
+<Meta of={FooterStories} />
+
+# Footer
+
+The Footer component provides a consistent layout for website footers with various sections like navigation, social links, and copyright information.
+
+## Basic Footer
+
+Simple footer with basic content:
+
+<Canvas>
+  <Story of={FooterStories.Basic} />
+</Canvas>
+
+## With Navigation
+
+Footer with navigation links:
+
+<Canvas>
+  <Story of={FooterStories.WithNavigation} />
+</Canvas>
+
+## With Social Links
+
+Footer with social media links:
+
+<Canvas>
+  <Story of={FooterStories.WithSocial} />
+</Canvas>
+
+## Full Featured
+
+Complete footer with all features:
+
+<Canvas>
+  <Story of={FooterStories.FullFeatured} />
+</Canvas>
+
+## Interactive Controls
+
+Use the controls below to experiment with the footer's properties:
+
+<Controls />

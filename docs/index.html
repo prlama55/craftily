@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Craftily UI - Storybooks</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Add your custom styles here if needed */
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-100 h-screen">
+
+  <!-- Header -->
+  <header class="bg-[#eff8ff] text-gray-800 dark:bg-gray-900 dark:text-gray-100 shadow-sm">
+    <div class="mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Branding Section -->
+        <div class="flex items-start">
+          <div class="text-xl font-semibold">Craftily UI</div>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="hidden md:flex space-x-4">
+          <a href="#" class="text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400" onclick="showContent('react')">React Storybook</a>
+          <a href="#" class="text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400" onclick="showContent('vue')">Vue Storybook</a>
+          <a href="#" class="text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400" onclick="showContent('svelte')">Svelte Storybook</a>
+          <a href="#" class="text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400" onclick="showContent('angular')">Angular Storybook</a>
+          <a href="#" class="text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400" onclick="showContent('web')">Web Components</a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+          <button id="mobile-menu-button" class="text-gray-700 dark:text-gray-200">
+            ☰
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu (Hidden by Default) -->
+    <div id="mobile-menu" class="md:hidden hidden">
+      <nav class="flex flex-col space-y-2 bg-white dark:bg-gray-900">
+        <a href="#" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700" onclick="showContent('react')">React Storybook</a>
+        <a href="#" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700" onclick="showContent('vue')">Vue Storybook</a>
+        <a href="#" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700" onclick="showContent('svelte')">Svelte Storybook</a>
+        <a href="#" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700" onclick="showContent('angular')">Angular Storybook</a>
+        <a href="#" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700" onclick="showContent('web')">Web Components</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="h-[calc(100vh-64px)] w-[100vw]">
+    <!-- React Storybook Section -->
+    <section id="react-storybook" class="content-section hidden">
+      <iframe src="./react-storybook/index.html" class="w-[100vw] h-[calc(100vh-64px)]" title="React Storybook"></iframe>
+    </section>
+
+    <!-- Vue Storybook Section -->
+    <section id="vue-storybook" class="content-section hidden">
+      <iframe src="./vue-storybook/index.html" class="w-[100vw] h-[calc(100vh-64px)]" title="Vue Storybook"></iframe>
+    </section>
+
+    <!-- Svelte Storybook Section -->
+    <section id="svelte-storybook" class="content-section hidden">
+      <iframe src="./svelte-storybook/index.html" class="w-[100vw] h-[calc(100vh-64px)]" title="Svelte Storybook"></iframe>
+    </section>
+
+    <!-- Angular Storybook Section -->
+    <section id="angular-storybook" class="content-section hidden">
+      <iframe src="./angular-storybook/index.html" class="w-[100vw] h-[calc(100vh-64px)]" title="Angular Storybook"></iframe>
+    </section>
+
+    <!-- Web Components Storybook Section -->
+    <section id="web-components" class="content-section hidden">
+      <iframe src="./web-components-storybook/index.html" class="w-[100vw] h-[calc(100vh-64px)]" title="Web Components"></iframe>
+    </section>
+  </main>
+
+  <!-- JavaScript for Mobile Menu Toggle and Content Display -->
+  <script>
+    // Function to toggle mobile menu
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Function to show the relevant content when a menu item is clicked
+    function showContent(content) {
+      // Hide all sections
+      const sections = document.querySelectorAll('.content-section');
+      sections.forEach(section => section.classList.add('hidden'));
+
+      // Show the clicked section
+      const activeSection = document.getElementById(content + '-storybook');
+      if (activeSection) {
+        activeSection.classList.remove('hidden');
+      }
+    }
+
+    // Show the React Storybook by default
+    showContent('react');
+  </script>
+
+</body>
+</html>

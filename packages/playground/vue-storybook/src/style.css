@@ -62,3 +62,6 @@
   --size-field: 0.25rem;
   --border: 1px;
 }
+.sbdocs-content {
+  max-width: 90vw !important;
+}

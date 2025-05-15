@@ -1,0 +1,46 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import * as TabsStories from './Tabs.stories';
+
+<Meta of={TabsStories} />
+
+# Tabs
+
+The Tabs component allows users to switch between different views within the same context.
+
+## Basic Usage
+
+Basic tabs with simple content:
+
+<Canvas>
+  <Story of={TabsStories.Basic} />
+</Canvas>
+
+## With Icons
+
+Tabs with icons:
+
+<Canvas>
+  <Story of={TabsStories.WithIcons} />
+</Canvas>
+
+## Variants
+
+Different tab styles:
+
+<Canvas>
+  <Story of={TabsStories.Variants} />
+</Canvas>
+
+## With Badge
+
+Tabs with badges:
+
+<Canvas>
+  <Story of={TabsStories.WithBadge} />
+</Canvas>
+
+## Interactive Controls
+
+Use the controls below to experiment with the tabs' properties:
+
+<Controls />
