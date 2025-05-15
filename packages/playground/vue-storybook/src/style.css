@@ -65,3 +65,6 @@
 .sbdocs-content {
   max-width: 90vw !important;
 }
+[class*='sidebar-header'] {
+  display: none !important;
+}
